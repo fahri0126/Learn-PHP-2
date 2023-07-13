@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 12, 2023 at 11:37 AM
+-- Generation Time: Jul 13, 2023 at 10:22 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -40,8 +40,11 @@ CREATE TABLE `tb_hobby` (
 
 INSERT INTO `tb_hobby` (`id`, `n_hobby`, `d_hobby`, `image`) VALUES
 (1, 'Main game', 'Game faforit saya adalah Kingdom Two Crowns.', 'kingdom.png'),
-(2, 'Baca komik', 'komik faforit saya adalah Doraemon', 'doraemon.jpeg'),
-(3, '', '', '');
+(2, 'Baca komik', 'komik faforit saya adalah Doraemon.', 'doraemon.jpeg'),
+(6, 'Nonton Film', 'Film faforit saya adalah Harry potter.', 'potter.jpg'),
+(33, 'Olah raga', 'Olah raga faforit saya adalah Sepak bola.', 'bola.jpg'),
+(48, 'Makan', 'Makanan faforit saya adalah ayam kecap.', 'ayam.jpg'),
+(49, 'Nonton Film', '', 'potter.jpg');
 
 --
 -- Indexes for dumped tables
@@ -61,7 +64,7 @@ ALTER TABLE `tb_hobby`
 -- AUTO_INCREMENT for table `tb_hobby`
 --
 ALTER TABLE `tb_hobby`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

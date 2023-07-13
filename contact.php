@@ -98,15 +98,15 @@
 
   <!-- footer -->
 
-  <footer class="bg-secondary text-white text-center p-3">
+  <<footer class="bg-secondary text-white text-center p-3">
     <p>Created by Muh. Fahri | <a class="text-white fw-bold" href="https://www.instagram.com/muhammadfahri6902?r=nametag" target="_blank">muhammadfahri6902</a></p>
-  </footer>
+    </footer>
 
-  <!-- footer end -->
+    <!-- footer end -->
 
-  <!-- Js Boostrap -->
-  <script src="popper/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+    <!-- Js Boostrap -->
+    <script src="popper/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>

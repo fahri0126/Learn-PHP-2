@@ -16,7 +16,7 @@
 
   <style>
     .perenggang {
-      height: 21vh;
+      height: 31vh;
     }
 
     .perenggang2 {
@@ -62,7 +62,7 @@
 
   <!-- Navigation Bar end -->
 
-  <div class="perenggang"></div>
+  <div class="perenggang2"></div>
 
   <!-- education -->
   <div id="pendidikan"></div>
