@@ -38,7 +38,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto nav-pills">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            <a class="nav-link" aria-current="page" href="index.php">Home</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> About </a>
@@ -61,7 +61,6 @@
 
   <div class="perenggang"></div>
 
-  <!-- contact -->
   <!-- contact -->
   <div id="contact"></div>
   <section class="container mt-5">
@@ -92,21 +91,20 @@
   </section>
 
   <!-- contact end -->
-  <!-- contact end -->
 
   <div class="perenggang"></div>
 
   <!-- footer -->
 
-  <<footer class="bg-secondary text-white text-center p-3">
+  <footer class="bg-secondary text-white text-center p-3">
     <p>Created by Muh. Fahri | <a class="text-white fw-bold" href="https://www.instagram.com/muhammadfahri6902?r=nametag" target="_blank">muhammadfahri6902</a></p>
-    </footer>
+  </footer>
 
-    <!-- footer end -->
+  <!-- footer end -->
 
-    <!-- Js Boostrap -->
-    <script src="popper/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+  <!-- Js Boostrap -->
+  <script src="popper/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>

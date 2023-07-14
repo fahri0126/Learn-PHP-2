@@ -1,6 +1,7 @@
 <?php
 require "crud.php";
-$hobby = query("SELECT * FROM tb_hobby");
+$hobby = tampil("SELECT * FROM tb_hobby");
+// $result = mysqli_query($conn, "SELECT * FROM tb_hobby");
 
 ?>
 
@@ -11,7 +12,7 @@ $hobby = query("SELECT * FROM tb_hobby");
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
-  <title>My Biodata</title>
+  <title>My Hobby</title>
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -97,14 +98,14 @@ $hobby = query("SELECT * FROM tb_hobby");
 
           <div class="col-md-4 mt-3">
             <div class="card">
-              <img src="img/<?= $row["image"]; ?>" class="card-img-top" alt="#" style="max-height: 12rem; min-height: 12rem;" />
+              <img src="img/<?= $row["gambar"]; ?>" class="card-img-top" alt="#" style="max-height: 12rem; min-height: 12rem;" />
               <div class="card-body">
                 <p class="card-text fs-5">
                   <strong><?= $row["n_hobby"] ?></strong>
                 </p>
                 <p class="card-text"><?= $row["d_hobby"] ?></p>
                 <div class="d-flex justify-content-end">
-                  <a class="me-2" href=""><img src="img/edit.svg" alt=""></a>
+                  <a class="me-2" href="sunting.php?id=<?= $row["id"]; ?>"><img src="img/edit.svg" alt=""></a>
                   <a class="" href="hapus.php?id=<?= $row["id"]; ?>"><img src="img/hapus.svg" alt=""></a>
                 </div>
               </div>

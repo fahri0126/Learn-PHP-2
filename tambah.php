@@ -42,11 +42,11 @@ if (isset($_POST["submit"])) {
                     </div>
                     <div class="mb-3">
                         <label for="d_hobby" class="form-label">Message</label>
-                        <textarea class="form-control" id="d_hobby" rows="3" name="d_hobby"></textarea>
+                        <textarea class="form-control" id="d_hobby" rows="3" name="d_hobby" required></textarea>
                     </div>
                     <div class="mb-3">
-                        <label for="image" class="form-label">Image</label>
-                        <input type="text" class="form-control" id="image" name="image" />
+                        <label for="gambar" class="form-label">Image</label>
+                        <input type="text" class="form-control" id="gambar" name="gambar" />
                     </div>
                     <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                 </form>

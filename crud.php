@@ -2,7 +2,7 @@
 // connect ke database
 $conn = mysqli_connect("localhost", "root", "", "db_hobby");
 
-function query($query)
+function tampil($query)
 {
   global $conn;
   $result = mysqli_query($conn, $query);
@@ -13,20 +13,22 @@ function query($query)
   return $rows;
 }
 
+// tambah data
 function tambah($data)
 {
   global $conn;
   $n_hobby = $data["n_hobby"];
   $d_hobby = $data["d_hobby"];
-  $image = $data["image"];
+  $gambar = $data["gambar"];
 
   $query = "INSERT INTO tb_hobby VALUES
-                ('', '$n_hobby', '$d_hobby', '$image')
+                ('', '$n_hobby', '$d_hobby', '$gambar')
                 ";
   mysqli_query($conn, $query);
   return mysqli_affected_rows($conn);
 }
 
+// hapus data
 function hapus($id)
 {
   global $conn;
@@ -34,6 +36,25 @@ function hapus($id)
   return mysqli_affected_rows($conn);
 }
 
+
+// ubah data 
+function ubah($data)
+{
+  global $conn;
+  $id = $data["id"];
+  $n_hobby = $data["n_hobby"];
+  $d_hobby = $data["d_hobby"];
+  $gambar = $data["gambar"];
+
+  $query = "UPDATE tb_hobby SET
+                n_hobby = '$n_hobby',
+                 d_hobby = '$d_hobby',
+                  gambar = '$gambar'
+              WHERE id= $id
+                ";
+  mysqli_query($conn, $query);
+  return mysqli_affected_rows($conn);
+}
 
 ?>
 
@@ -54,6 +75,7 @@ function hapus($id)
 // while ( $tb = mysqli_fetch_assoc($result) )
 // var_dump($tb);
 
+// htmlspecialchars();
 
 // if (!$result){
 // echo mysqli_error($conn);
