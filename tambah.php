@@ -4,7 +4,6 @@ require 'crud.php';
 if (isset($_POST["submit"])) {
 
     if (tambah($_POST) > 0) {
-        // echo "<br><h1 class='text-center text-success'>SUCCESS</h1>";
         header("location:hobby.php");
     } else {
         echo mysqli_error($conn);

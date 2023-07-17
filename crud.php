@@ -56,6 +56,17 @@ function ubah($data)
   return mysqli_affected_rows($conn);
 }
 
+
+function cari($keyword)
+{
+  $query  = "SELECT * FROM tb_hobby
+              WHERE 
+            n_hobby LIKE '%$keyword%' OR
+            d_hobby LIKE '%$keyword%'
+            ";
+  return tampil($query);
+}
+
 ?>
 
 

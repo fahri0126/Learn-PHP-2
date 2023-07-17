@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 14, 2023 at 10:55 AM
+-- Generation Time: Jul 17, 2023 at 10:36 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -39,11 +39,11 @@ CREATE TABLE `tb_hobby` (
 --
 
 INSERT INTO `tb_hobby` (`id`, `n_hobby`, `d_hobby`, `gambar`) VALUES
-(1, 'Main game', 'Game faforit saya adalah Kingdom Two Crowns.', 'kingdom.png'),
-(2, 'Baca komik', 'komik faforit saya adalah Doraemon.', 'doraemon.jpeg'),
-(6, 'Nonton Film', 'Film faforit saya adalah Harry potter.', 'potter.jpg'),
-(33, 'Olah raga', 'saya suka lari sore.', 'lari.jpg'),
-(48, 'Makan', 'Makanan faforit saya adalah ayam kecap.', 'ayam.jpg');
+(63, 'Main game', 'Game faforit saya adalah Kingdom Two Crowns.\r\n', 'kingdom.png'),
+(64, 'Baca Komik', 'Komik faforit saya adalah Doraemon.', 'doraemon.jpeg'),
+(65, 'Olah Raga', 'Saya suka lari sore.', 'lari.jpg'),
+(66, 'Nonton Film', 'FIlm faforit saya adalah Harry Potter.', 'potter.jpg'),
+(67, 'Makan', 'Saya suka ayam kecap.', 'ayam.jpg');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +63,7 @@ ALTER TABLE `tb_hobby`
 -- AUTO_INCREMENT for table `tb_hobby`
 --
 ALTER TABLE `tb_hobby`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

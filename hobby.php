@@ -1,7 +1,10 @@
 <?php
 require "crud.php";
-$hobby = tampil("SELECT * FROM tb_hobby");
-// $result = mysqli_query($conn, "SELECT * FROM tb_hobby");
+$hobby = tampil("SELECT * FROM tb_hobby ORDER BY id DESC");
+
+if (isset($_POST["cari"])) {
+  $hobby = cari($_POST["keyword"]);
+}
 
 ?>
 
@@ -41,7 +44,7 @@ $hobby = tampil("SELECT * FROM tb_hobby");
   <nav class="navbar navbar-expand-lg shadow-sm navbar-dark bg-secondary fixed-top">
     <div class="container">
       <!-- kiri -->
-      <a class="navbar-brand fw-normal fs-4" href="#">muh._.fahri</a>
+      <a class="navbar-brand fw-normal fs-4" href="">muh._.fahri</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -77,18 +80,21 @@ $hobby = tampil("SELECT * FROM tb_hobby");
   <!-- Hobby -->
   <section class="mb-5 pb-5">
     <div class="container">
-      <div class="row">
-        <div class="col-md-2 d-flex align-items-end justify-content-center">
-          <h2 class="fw-normal fs-3 text-center">My Hobby</h2>
+      <div class="row d-flex justify-content-between">
+        <div class="col-md-3 text-center">
+          <form action="" method="post" class="d-flex">
+            <input type="text" name="keyword" class="form-control" autofocus placeholder="type here..." autocomplete="off">
+            <button type="submit" name="cari" class="btn btn-primary ms-1">Cari</button>
+          </form>
         </div>
         <div class="col-md-2 text-center">
-          <a type="button" class="btn btn-primary mt-4" href="tambah.php">Add New Hobby</a>
+          <a type="button" class="btn btn-primary" href="tambah.php">Add New Hobby</a>
         </div>
       </div>
       <div class="row">
         <div class="col mt-3">
           <hr class="mt-5" />
-          <p class="lead fs-5 text-center">List Hobby</p>
+          <p class="lead fs-5 text-center">terbaru</p>
         </div>
       </div>
 
@@ -120,6 +126,7 @@ $hobby = tampil("SELECT * FROM tb_hobby");
   <!-- Hobby end -->
 
 
+  <div class="perenggang"></div>
   <div class="perenggang"></div>
 
   <!-- footer -->
