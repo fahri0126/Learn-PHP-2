@@ -62,10 +62,34 @@ function cari($keyword)
   $query  = "SELECT * FROM tb_hobby
               WHERE 
             n_hobby LIKE '%$keyword%' OR
-            d_hobby LIKE '%$keyword%'
+            d_hobby LIKE '%$keyword%' ORDER BY id DESC
             ";
   return tampil($query);
 }
+
+// PAGINATION
+$dataYgTampil = 3;
+$result = mysqli_query($conn, "SELECT * FROM tb_hobby");
+$index = mysqli_num_rows($result);
+$totalHalaman = ceil($index / $dataYgTampil);
+$halamanAktif = (isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
+$awalIndex = ($dataYgTampil * $halamanAktif) - $dataYgTampil;
+
+$jumlahPag = 1;
+if ($halamanAktif > $jumlahPag) {
+  $Snumber = $halamanAktif - $jumlahPag;
+} else {
+  $Snumber = 1;
+}
+
+if ($halamanAktif < ($totalHalaman - $jumlahPag)) {
+  $Enumber = $halamanAktif + $jumlahPag;
+} else {
+  $Enumber = $totalHalaman;
+}
+
+// PAGINATION END
+
 
 ?>
 

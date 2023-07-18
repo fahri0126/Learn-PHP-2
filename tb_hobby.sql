@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 17, 2023 at 10:36 AM
+-- Generation Time: Jul 18, 2023 at 11:07 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -43,7 +43,22 @@ INSERT INTO `tb_hobby` (`id`, `n_hobby`, `d_hobby`, `gambar`) VALUES
 (64, 'Baca Komik', 'Komik faforit saya adalah Doraemon.', 'doraemon.jpeg'),
 (65, 'Olah Raga', 'Saya suka lari sore.', 'lari.jpg'),
 (66, 'Nonton Film', 'FIlm faforit saya adalah Harry Potter.', 'potter.jpg'),
-(67, 'Makan', 'Saya suka ayam kecap.', 'ayam.jpg');
+(67, 'Makan', 'Saya suka ayam kecap.', 'ayam.jpg'),
+(72, 'minum', 'saya suka minum jus alpukat.', 'noimg.jpg'),
+(76, 'a', 'a', 'noimg.jpg'),
+(77, 'b', 'b', 'noimg.jpg'),
+(78, 'c', 'c', 'noimg.jpg'),
+(79, '0', '0', 'noimg.jpg'),
+(80, 'd', 'd', 'noimg.jpg'),
+(82, 'e', 'e', 'kingdom.png'),
+(84, 'f', 'f', 'ayam.jpg'),
+(85, 'g', 'g', 'potter.jpg'),
+(86, 'h', 'h', 'noimg.jpg'),
+(88, 'j', 'j', 'noimg.jpg'),
+(89, 'k', 'k', 'noimg.jpg'),
+(90, 'la', 'l', 'noimg.jpg'),
+(91, 'ma', 'm', 'noimg.jpg'),
+(93, 'ma', 'm', 'noimg.jpg');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +78,7 @@ ALTER TABLE `tb_hobby`
 -- AUTO_INCREMENT for table `tb_hobby`
 --
 ALTER TABLE `tb_hobby`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,10 +1,13 @@
 <?php
 require "crud.php";
-$hobby = tampil("SELECT * FROM tb_hobby ORDER BY id DESC");
+session_start();
+
+$hobby = tampil("SELECT * FROM tb_hobby ORDER BY id DESC LIMIT $awalIndex, $dataYgTampil");
 
 if (isset($_POST["cari"])) {
   $hobby = cari($_POST["keyword"]);
-}
+  $_SESSION["keyword"] = $hobby;
+} else
 
 ?>
 
@@ -44,7 +47,7 @@ if (isset($_POST["cari"])) {
   <nav class="navbar navbar-expand-lg shadow-sm navbar-dark bg-secondary fixed-top">
     <div class="container">
       <!-- kiri -->
-      <a class="navbar-brand fw-normal fs-4" href="">muh._.fahri</a>
+      <a class="navbar-brand fw-normal fs-4" href="hobby.php">muh._.fahri</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -83,7 +86,7 @@ if (isset($_POST["cari"])) {
       <div class="row d-flex justify-content-between">
         <div class="col-md-3 text-center">
           <form action="" method="post" class="d-flex">
-            <input type="text" name="keyword" class="form-control" autofocus placeholder="type here..." autocomplete="off">
+            <input type="text" name="keyword" class="form-control" autofocus placeholder="type here..." autocomplete="off" required oninvalid="this.setCustomValidity(' ')" oninput="setCustomValidity('')">
             <button type="submit" name="cari" class="btn btn-primary ms-1">Cari</button>
           </form>
         </div>
@@ -94,9 +97,47 @@ if (isset($_POST["cari"])) {
       <div class="row">
         <div class="col mt-3">
           <hr class="mt-5" />
-          <p class="lead fs-5 text-center">terbaru</p>
+          <p class="lead fs-5 text-center"></p>
         </div>
       </div>
+
+      <!-- pagination -->
+      <div class="container d-flex justify-content-center">
+
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <!-- kiri -->
+            <?php if ($halamanAktif > 1) : ?>
+              <li class="page-item">
+                <a class="page-link" href="?halaman=<?= $halamanAktif - 1; ?>" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+            <?php endif; ?>
+            <!-- kiri -->
+
+            <?php for ($i = $Snumber; $i <= $Enumber; $i++) : ?>
+              <?php if ($i == $halamanAktif) : ?>
+                <li class="page-item active"><a class="page-link" href="?halaman=<?= $i ?>"><?= $i ?></a></li>
+              <?php else : ?>
+                <li class="page-item"><a class="page-link" href="?halaman=<?= $i ?>"><?= $i ?></a></li>
+              <?php endif; ?>
+            <?php endfor; ?>
+
+            <!-- kanan -->
+            <?php if ($halamanAktif < $totalHalaman) : ?>
+              <li class="page-item">
+                <a class="page-link" href="?halaman=<?= $halamanAktif + 1; ?>" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            <?php endif; ?>
+            <!-- kanan -->
+          </ul>
+        </nav>
+
+      </div>
+      <!-- pagination end-->
 
       <div class="row justify-content-center">
 
