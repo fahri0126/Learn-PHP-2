@@ -1,7 +1,19 @@
 <?php
 $koneksi = mysqli_connect("localhost", "root", "", "db_employee");
 
-$result = mysqli_query($koneksi, "SELECT * FROM employee, divisi WHERE employee.id_divisi = divisi.id");
+$query =
+    "SELECT employee.id, employee.nama, employee.jk, employee.foto, employee.tgl, divisi.divisi, nik.nik, project.nama_project, project.deskripsi
+        FROM employee 
+        LEFT JOIN divisi ON employee.id_divisi = divisi.id
+        LEFT JOIN nik ON employee.id_nik = nik.id
+        LEFT JOIN employee_project AS ep ON employee.id = ep.employee_id
+        LEFT JOIN project ON ep.project_id = project.project_id
+        ORDER BY employee.id DESC
+        ";
+
+$result = mysqli_query($koneksi, $query);
+
+mysqli_close($koneksi);
 
 ?>
 
@@ -32,9 +44,12 @@ $result = mysqli_query($koneksi, "SELECT * FROM employee, divisi WHERE employee.
             <th>Nama</th>
             <th>Jenis Kelamin</th>
             <th>Foto</th>
-            <th>Aksi</th>
             <th>Tanggal</th>
+            <th>Aksi</th>
             <th bgcolor="tomato">Divisi</th>
+            <th bgcolor="green">NIK</th>
+            <th bgcolor="blue">Project</th>
+            <th bgcolor="blue">Deskripsi</th>
         </tr>
         <?php while ($row = mysqli_fetch_assoc($result)) : ?>
             <tr>
@@ -42,12 +57,15 @@ $result = mysqli_query($koneksi, "SELECT * FROM employee, divisi WHERE employee.
                 <td><?= $row["nama"]; ?></td>
                 <td><?= $row["jk"]; ?></td>
                 <td><img style="height: 50px; width: 50px ;" src="../file/img/<?= $row["foto"]; ?>" alt=""></td>
+                <td><?= $row["tgl"]; ?></td>
                 <td>
                     <button style="background-color: red ;"><a href="hapus.php?id=<?= $row["id"]; ?>">Hapus</a></button> |
                     <button style="background-color: green ;"><a href="ubah.php?id=<?= $row["id"]; ?>">Ubah</a></button>
                 </td>
-                <td><?= $row["tgl"]; ?></td>
                 <td><?= $row["divisi"]; ?></td>
+                <td><?= $row["nik"]; ?></td>
+                <td style="max-width: 170px;"><?= $row["nama_project"]  ?: "-"; ?></td>
+                <td style="max-width: 400px;"><?= $row["deskripsi"]  ?: "-"; ?></td>
             </tr>
             <?php $i++ ?>
         <?php endwhile; ?>
